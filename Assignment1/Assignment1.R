@@ -30,9 +30,12 @@ generation0 <- function(a,b,gt_a,gt_b,d){
     tempb <- 0
     if(a==1|a==2|a==3|a==4){tempb <- tabel$Relatedto[[b]]
     tempb <- as.numeric(as.character(tempb))}
-    else{
+    else if(b==1|b==2|b==3|b==4){
       tempa <- tabel$Relatedto[[a]]
       tempa <- as.numeric(as.character(tempa))
+    }
+    else{
+      return (7)
     }
     
     if(tempa == b | tempb ==a){
