@@ -15,8 +15,8 @@ for (item in 5:nrow(tabel) ){
   }
   
 }
-Name1 <- "B"
-Name2 <- "Bs"
+Name1 <- readline(prompt="Name1:")
+Name2 <- readline(prompt="Name2:")
 
 p1 <- subset(tabel$PKey,tabel$Name == Name1)
 p2 <- subset(tabel$PKey,tabel$Name == Name2)
@@ -26,11 +26,23 @@ p2 <- as.numeric(as.character(p2))
 # print (p2)
 generation0 <- function(a,b,gt_a,gt_b,d){
   if(a==1|a==2|a==3|a==4|b==1|b==2|b==3|b==4)
-  {tempa <- 1}
+  { tempa <- 0
+    tempb <- 0
+    if(a==1|a==2|a==3|a==4){tempb <- tabel$Relatedto[[b]]
+    tempb <- as.numeric(as.character(tempb))}
+    else{
+      tempa <- tabel$Relatedto[[a]]
+      tempa <- as.numeric(as.character(tempa))
+    }
+    
+    if(tempa == b | tempb ==a){
+      return (8)
+    }
+    else{return (7)}   
+  }
   else{
   tempa <- tabel$Relatedto[[a]]
   tempa <- as.numeric(as.character(tempa))
-  }
   print (tempa)
   tempb <- tabel$Relatedto[[b]]
   tempb <- as.numeric(as.character(tempb))
@@ -46,6 +58,7 @@ generation0 <- function(a,b,gt_a,gt_b,d){
       return(8)
     }
     else{return (9)}
+  }
   }
 }
 
