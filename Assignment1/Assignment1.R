@@ -25,17 +25,18 @@ p2 <- as.numeric(as.character(p2))
 # print (p1)
 # print (p2)
 generation0 <- function(a,b,gt_a,gt_b,d){
-  if(a==1|a==2|a==3|a==4|b==1|b==2|b==3|b==4)
+  if(a <5 | b < 5)
   { tempa <- 0
     tempb <- 0
-    if(a==1|a==2|a==3|a==4){tempb <- tabel$Relatedto[[b]]
+    if(a < 5 & b < 5){
+      return (7)
+    }
+    else if(a<5 & b >4)
+    {tempb <- tabel$Relatedto[[b]]
     tempb <- as.numeric(as.character(tempb))}
-    else if(b==1|b==2|b==3|b==4){
+    else{
       tempa <- tabel$Relatedto[[a]]
       tempa <- as.numeric(as.character(tempa))
-    }
-    else{
-      return (7)
     }
     
     if(tempa == b | tempb ==a){
