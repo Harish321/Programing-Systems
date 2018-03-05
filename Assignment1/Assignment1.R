@@ -15,15 +15,6 @@ for (item in 5:nrow(tabel) ){
   }
   
 }
-Name1 <- readline(prompt="Name1:")
-Name2 <- readline(prompt="Name2:")
-
-p1 <- subset(tabel$PKey,tabel$Name == Name1)
-p2 <- subset(tabel$PKey,tabel$Name == Name2)
-p1 <- as.numeric(as.character(p1))
-p2 <- as.numeric(as.character(p2))
-# print (p1)
-# print (p2)
 generation0 <- function(a,b,gt_a,gt_b,d){
   if(a <5 | b < 5)
   { tempa <- 0
@@ -68,7 +59,12 @@ generation0 <- function(a,b,gt_a,gt_b,d){
 
 generation1 <- function(a,b,gt_a,gt_b,d){
   if (d == 1){
+    if( a < 5){
+      temp <- 1
+    }
+    else{
     temp <- tabel$Relatedto[[a]]
+    }
     temp <- as.numeric(as.character(temp))
     gt_temp <- generation[[temp]]
     if( gt_b == gt_temp ){
@@ -76,7 +72,8 @@ generation1 <- function(a,b,gt_a,gt_b,d){
           return (0)
       }
       else{
-        secondtemp <- tabel$Relatedto[[b]]
+        if (b < 5){return (4)}
+        else{secondtemp <- tabel$Relatedto[[b]]}
         secondtemp <- as.numeric(as.character(secondtemp))
         if(temp == secondtemp){
           return (0)
@@ -126,7 +123,7 @@ generation2 <- function(a,b,gt_a,gt_b,d){
      }
    }
    else{
-      fir_gen_rel <- generation2(b,a,gt_b,gt_a,3)
+      sec_gen_rel <- generation2(b,a,gt_b,gt_a,2)
       if(sec_gen_rel ==0 | sec_gen_rel == 1){
         if(sec_gen_rel ==0) {return(2)}
         else{return(3)}
@@ -140,7 +137,10 @@ generation3 <- function (a,b,gt_a,gt_b,d){
   if (d == 3){
     temp <- tabel$Relatedto[[a]]
     temp <- as.numeric(as.character(temp))
+    print (temp)
     gt_temp <- generation[[temp]]
+    print (gt_temp)
+    print (gt_b)
     if(gt_temp - gt_b == 2){
       sec_gen_rel <- generation2(temp,b,gt_temp,gt_b,2)
       return (sec_gen_rel)
@@ -158,14 +158,30 @@ generation3 <- function (a,b,gt_a,gt_b,d){
       }
       else{return(5)}
     }
-  }
+}
 
+for (names in 1:nrow(tabel)){
+    # print (name1)
+# Name1 <- readline(prompt="Name1:")
+# Name2 <- readline(prompt="Name2:")
 
+# p1 <- subset(tabel$PKey,tabel$Name == Name1)
+# p2 <- subset(tabel$PKey,tabel$Name == Name2)
+# p1 <- as.numeric(as.character(p1))
+# p2 <- as.numeric(as.character(p2))
+# # print (p1
+# print (p2)
+p1 <- 1
+p1 <- as.numeric(p1)
+p2 <- names
+p2 <- as.numeric(p2)
+print (p2)
 gt_p1 <- generation[[p1]]
 gt_p2 <- generation[[p2]]
 gender <- tabel$Gender[[p1]]
 gender <- as.character(gender)
-diff_gen <- gt_p1 -gt_p2
+diff_gen <- gt_p1 - gt_p2
+print (diff_gen)
 if(diff_gen == 0){
   realation <- generation0(p1,p2,gt_p1,gt_p2,diff_gen)
   if(realation == 6){
@@ -241,6 +257,8 @@ if( diff_gen == 3 | diff_gen == -3){
     else{print("P1 is Great Grand Aunty of P2")} 
   }
 }
+}
+
 
 
 
