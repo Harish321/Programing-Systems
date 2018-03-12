@@ -1,0 +1,10 @@
+Integer 
+Numeric 
+Character
+Arrays
+Matrix
+List
+Logical 
+Complex 
+Vectors
+Dataframe
