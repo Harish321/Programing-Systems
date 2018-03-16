@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+}
+.main_body{
+    padding: 10px;
+}
+.options{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+    grid-gap: 2em;
+}
+.Function_1{
+    grid-column-start: 2;
+}
+.form_content{
+    margin-right: auto;
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.12)!important;
+    width: 500px;
+    height: 300px;
+}
+.information{
+    padding: 1em;
+    background: blue;
+}
+.information h3,.information p{
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+.form_class form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    padding: 1em;
+}
+.Headline{    
+    padding: 20px;
+}
