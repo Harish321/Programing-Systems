@@ -4,25 +4,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/bootstrap.css">    
+    <link rel="stylesheet" href="css/bootstrap.css">   
     <title>Document</title>
 </head>
 <body class="main_body">
     <div class="Headline">
     <h2 style="marging:auto;text-align:center;">Welocome to the Family tree of A,B,C,D</h2>
     </div>
- <div class="form_content" id="form_content">
-     <div class="information">
-     <h3 style="text-align:center;">Relation between two persons</h3>
-     <p style="text-aling:center;">This function will return the relationship between two persons</p>
-     </div>
-     <div class="form_class">
-     <form action="#">
-         First  Person Name:   <input type="text" name="name1">
-         Second Person Name: <input type="text" name="name2">
-         <input type="submit" class="btn-success">
-     </form>
-     </div>
-</div>  
+ <div class="function_body">   
+    <div class="form_content" id="form_content">
+        <div class="radio_button">
+                <span><button id='Function1'>Function 1</button></span>
+                <span><button id='Function2'>Function 2</button></span>
+                <span><button id='Function3'>Function 3</button></span> 
+        </div>
+    </div>
+    <div class="box_class">
+        <div class='function1_box' id="function1_box">
+            <div class="information1">
+                <h3 style="text-align:center;">Relation between two persons</h3>
+                <p style="text-aling:center;">This function will return the relationship between two persons</p>
+                </div>
+            <div class="form_class1">
+                <form action="#" id='function1_form'>
+                    First  Person Name: <input type="text" name="name1">
+                    Second Person Name: <input type="text" name="name2">
+                    <input type="submit" class="btn-success">
+                </form>
+            </div>
+        </div>
+        <div class='function2_box' id='function2_box'>
+            <div class="information2">
+                <h3 style="text-align:center;">Person and Relationship</h3>
+                <p style="text-aling:center;">This function will return the person name who having the given relation with the given person</p>
+                </div>
+            <div class="form_class2">
+                <form action="#" id="function2_form">
+                    First  Person Name: <input type="text" name="name1">
+                    Relation: <select name="" id="" class="selectpicker">
+                             <option value="">Father</option>
+                             <option value="">Mother</option>
+                             <option value="">Brother</option>
+                             <option value="">Sister</option>
+                             <option value="">Uncle</option>
+                             <option value="">Aunty</option>
+                    </select>
+                    <input type="submit" class="btn-success">
+                </form>
+            </div>
+        </div>
+        <div class='function3_box' id="function3_box">
+            <div class="information3">
+                <h3 style="text-align:center;">Relation between two persons 3</h3>
+                <p style="text-aling:center;">This function will return the relationship between two persons</p>
+                </div>
+            <div class="form_class3">
+                <form action="#" id="function3_form">
+                    First  Person Name: <input type="text" name="name1">
+                    Second Person Name: <input type="text" name="name2">
+                    <input type="submit" class="btn-success">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/script.js"></script> 
+<script src="jquery.js"></script>
+<script src="jquery.form.min.js"></script>
+<script src="ajax.js"></script>
 </body>
 </html>
